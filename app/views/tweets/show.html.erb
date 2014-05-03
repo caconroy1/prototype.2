@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tweet.user %>
+</p>
+
+<p>
+  <strong>Tweet:</strong>
+  <%= @tweet.tweet %>
+</p>
+
+<p>
+  <strong>Approval status:</strong>
+  <%= @tweet.approval_status %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tweet.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @tweet.author %>
+</p>
+
+<p>
+  <strong>Content platform:</strong>
+  <%= @tweet.content_platform %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @tweet.content_type %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @tweet.image %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @tweet.url %>
+</p>
+
+<p>
+  <strong>Author notes:</strong>
+  <%= @tweet.author_notes %>
+</p>
+
+<p>
+  <strong>Editor notes:</strong>
+  <%= @tweet.editor_notes %>
+</p>
+
+<p>
+  <strong>Keyword checklist:</strong>
+  <%= @tweet.keyword_checklist %>
+</p>
+
+<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<%= link_to 'Back', tweets_path %>

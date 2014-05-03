@@ -1,4 +1,6 @@
 Prototype::Application.routes.draw do
+  resources :tweets
+
   resources :facebook_statuses
 
   resources :wordpress_blog_posts

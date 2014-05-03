@@ -1,0 +1,49 @@
+<h1>Listing tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Tweet</th>
+      <th>Approval status</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Content platform</th>
+      <th>Content type</th>
+      <th>Image</th>
+      <th>Url</th>
+      <th>Author notes</th>
+      <th>Editor notes</th>
+      <th>Keyword checklist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.user %></td>
+        <td><%= tweet.tweet %></td>
+        <td><%= tweet.approval_status %></td>
+        <td><%= tweet.title %></td>
+        <td><%= tweet.author %></td>
+        <td><%= tweet.content_platform %></td>
+        <td><%= tweet.content_type %></td>
+        <td><%= tweet.image %></td>
+        <td><%= tweet.url %></td>
+        <td><%= tweet.author_notes %></td>
+        <td><%= tweet.editor_notes %></td>
+        <td><%= tweet.keyword_checklist %></td>
+        <td><%= link_to 'Show', tweet %></td>
+        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>
