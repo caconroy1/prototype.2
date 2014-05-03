@@ -1,4 +1,5 @@
 ActiveAdmin.register InstagramImage do
+  permit_params :image, :approval_status, :title, :social_snippet, :author, :content_platform, :content_type, :associated_text, :author_notes, :editor_notes, :keyword_checklist
 
   
   # See permitted parameters documentation:
