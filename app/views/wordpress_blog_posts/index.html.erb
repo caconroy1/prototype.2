@@ -1,29 +1,29 @@
-<h1>Listing wordpress_blog_posts</h1>
-
-<table>
+<%- model_class = WordpressBlogPost -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => WordpressBlogPost %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Blog post</th>
-      <th>Featured image</th>
-      <th>Approval status</th>
-      <th>Social snippet</th>
-      <th>Author</th>
-      <th>Content platform</th>
-      <th>Content type</th>
-      <th>Author notes</th>
-      <th>Editor notes</th>
-      <th>Keyword checklist</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:blog_post) %></th>
+      <th><%= model_class.human_attribute_name(:featured_image) %></th>
+      <th><%= model_class.human_attribute_name(:approval_status) %></th>
+      <th><%= model_class.human_attribute_name(:social_snippet) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:content_platform) %></th>
+      <th><%= model_class.human_attribute_name(:content_type) %></th>
+      <th><%= model_class.human_attribute_name(:author_notes) %></th>
+      <th><%= model_class.human_attribute_name(:editor_notes) %></th>
+      <th><%= model_class.human_attribute_name(:keyword_checklist) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @wordpress_blog_posts.each do |wordpress_blog_post| %>
       <tr>
-        <td><%= wordpress_blog_post.user %></td>
+        <td><%= wordpress_blog_post.id %></td>
         <td><%= wordpress_blog_post.blog_post %></td>
         <td><%= wordpress_blog_post.featured_image %></td>
         <td><%= wordpress_blog_post.approval_status %></td>
@@ -34,14 +34,21 @@
         <td><%= wordpress_blog_post.author_notes %></td>
         <td><%= wordpress_blog_post.editor_notes %></td>
         <td><%= wordpress_blog_post.keyword_checklist %></td>
-        <td><%= link_to 'Show', wordpress_blog_post %></td>
-        <td><%= link_to 'Edit', edit_wordpress_blog_post_path(wordpress_blog_post) %></td>
-        <td><%= link_to 'Destroy', wordpress_blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l wordpress_blog_post.created_at, format: :long %></td>
+        <td>
+          <%= link_to wordpress_blog_post_path(wordpress_blog_post), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to wordpress_blog_post_path(wordpress_blog_post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Wordpress blog post', new_wordpress_blog_post_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_wordpress_blog_post_path,
+            :class => 'btn btn-primary' %>

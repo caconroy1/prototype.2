@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = WordpressBlogPost -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => WordpressBlogPost %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @wordpress_blog_post.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:blog_post) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.blog_post %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:featured_image) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.featured_image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:approval_status) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.approval_status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:social_snippet) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.social_snippet %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:author) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.author %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_platform) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.content_platform %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_type) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.content_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:author_notes) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.author_notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:editor_notes) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.editor_notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:keyword_checklist) %></dt>
+      <dd><pre class="prettyprint"><%= @wordpress_blog_post.keyword_checklist %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Blog post:</strong>
-  <%= @wordpress_blog_post.blog_post %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              wordpress_blog_posts_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_wordpress_blog_post_path(@wordpress_blog_post), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              wordpress_blog_post_path(@wordpress_blog_post),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Featured image:</strong>
-  <%= @wordpress_blog_post.featured_image %>
-</p>
-
-<p>
-  <strong>Approval status:</strong>
-  <%= @wordpress_blog_post.approval_status %>
-</p>
-
-<p>
-  <strong>Social snippet:</strong>
-  <%= @wordpress_blog_post.social_snippet %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @wordpress_blog_post.author %>
-</p>
-
-<p>
-  <strong>Content platform:</strong>
-  <%= @wordpress_blog_post.content_platform %>
-</p>
-
-<p>
-  <strong>Content type:</strong>
-  <%= @wordpress_blog_post.content_type %>
-</p>
-
-<p>
-  <strong>Author notes:</strong>
-  <%= @wordpress_blog_post.author_notes %>
-</p>
-
-<p>
-  <strong>Editor notes:</strong>
-  <%= @wordpress_blog_post.editor_notes %>
-</p>
-
-<p>
-  <strong>Keyword checklist:</strong>
-  <%= @wordpress_blog_post.keyword_checklist %>
-</p>
-
-<%= link_to 'Edit', edit_wordpress_blog_post_path(@wordpress_blog_post) %> |
-<%= link_to 'Back', wordpress_blog_posts_path %>
