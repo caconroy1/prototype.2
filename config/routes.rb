@@ -1,4 +1,5 @@
 Prototype::Application.routes.draw do
+  get "landings/index"
   resources :instagram_images
 
   resources :pins
