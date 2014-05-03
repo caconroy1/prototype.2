@@ -1,4 +1,6 @@
 Prototype::Application.routes.draw do
+  resources :pins
+
   resources :tweets
 
   resources :facebook_statuses

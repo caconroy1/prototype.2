@@ -1,0 +1,51 @@
+<h1>Listing pins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Approval status</th>
+      <th>Author</th>
+      <th>User</th>
+      <th>Url</th>
+      <th>Title</th>
+      <th>Social snippet</th>
+      <th>Content platform</th>
+      <th>Content type</th>
+      <th>Description</th>
+      <th>Author notes</th>
+      <th>Editor notes</th>
+      <th>Keyword checklist</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= pin.approval_status %></td>
+        <td><%= pin.author %></td>
+        <td><%= pin.user %></td>
+        <td><%= pin.url %></td>
+        <td><%= pin.title %></td>
+        <td><%= pin.social_snippet %></td>
+        <td><%= pin.content_platform %></td>
+        <td><%= pin.content_type %></td>
+        <td><%= pin.description %></td>
+        <td><%= pin.author_notes %></td>
+        <td><%= pin.editor_notes %></td>
+        <td><%= pin.keyword_checklist %></td>
+        <td><%= pin.image %></td>
+        <td><%= link_to 'Show', pin %></td>
+        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pin', new_pin_path %>

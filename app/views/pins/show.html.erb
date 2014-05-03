@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Approval status:</strong>
+  <%= @pin.approval_status %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @pin.author %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pin.user %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @pin.url %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pin.title %>
+</p>
+
+<p>
+  <strong>Social snippet:</strong>
+  <%= @pin.social_snippet %>
+</p>
+
+<p>
+  <strong>Content platform:</strong>
+  <%= @pin.content_platform %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @pin.content_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pin.description %>
+</p>
+
+<p>
+  <strong>Author notes:</strong>
+  <%= @pin.author_notes %>
+</p>
+
+<p>
+  <strong>Editor notes:</strong>
+  <%= @pin.editor_notes %>
+</p>
+
+<p>
+  <strong>Keyword checklist:</strong>
+  <%= @pin.keyword_checklist %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @pin.image %>
+</p>
+
+<%= link_to 'Edit', edit_pin_path(@pin) %> |
+<%= link_to 'Back', pins_path %>

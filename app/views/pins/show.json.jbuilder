@@ -1,0 +1,1 @@
+json.extract! @pin, :id, :approval_status, :author, :user_id, :url, :title, :social_snippet, :content_platform, :content_type, :description, :author_notes, :editor_notes, :keyword_checklist, :image, :created_at, :updated_at
