@@ -1,20 +1,64 @@
-<%= simple_form_for(@facebook_status) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :approval_status %>
-    <%= f.input :title %>
-    <%= f.input :facebook_status %>
-    <%= f.input :author %>
-    <%= f.input :content_platform %>
-    <%= f.input :content_type %>
-    <%= f.input :author_notes %>
-    <%= f.input :editor_notes %>
-    <%= f.input :keyword_checklist %>
+<%= form_for @facebook_status, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :approval_status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :approval_status, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :facebook_status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :facebook_status, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :author, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :author, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :content_platform, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :content_platform, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :content_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :content_type, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :author_notes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :author_notes, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :editor_notes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :editor_notes, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :keyword_checklist, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :keyword_checklist, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  facebook_statuses_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

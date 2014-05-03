@@ -1,6 +1,5 @@
-<h1>Editing facebook_status</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @facebook_status %> |
-<%= link_to 'Back', facebook_statuses_path %>
+<%- model_class = FacebookStatus -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => FacebookStatus %></h1>
+</div>
+<%= render :partial => 'form' %>
