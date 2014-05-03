@@ -1,69 +1,46 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Pin -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Pin %></h1>
+</div>
 
-<p>
-  <strong>Approval status:</strong>
-  <%= @pin.approval_status %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:approval_status) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.approval_status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:author) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.author %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.url %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:social_snippet) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.social_snippet %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_platform) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.content_platform %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_type) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.content_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:author_notes) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.author_notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:editor_notes) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.editor_notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:keyword_checklist) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.keyword_checklist %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= @pin.image %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @pin.author %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              pins_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_pin_path(@pin), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              pin_path(@pin),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @pin.user %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @pin.url %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @pin.title %>
-</p>
-
-<p>
-  <strong>Social snippet:</strong>
-  <%= @pin.social_snippet %>
-</p>
-
-<p>
-  <strong>Content platform:</strong>
-  <%= @pin.content_platform %>
-</p>
-
-<p>
-  <strong>Content type:</strong>
-  <%= @pin.content_type %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
-
-<p>
-  <strong>Author notes:</strong>
-  <%= @pin.author_notes %>
-</p>
-
-<p>
-  <strong>Editor notes:</strong>
-  <%= @pin.editor_notes %>
-</p>
-
-<p>
-  <strong>Keyword checklist:</strong>
-  <%= @pin.keyword_checklist %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @pin.image %>
-</p>
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>

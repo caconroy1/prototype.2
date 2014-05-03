@@ -1,6 +1,5 @@
-<h1>Editing pin</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+<%- model_class = Pin -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Pin %></h1>
+</div>
+<%= render :partial => 'form' %>
