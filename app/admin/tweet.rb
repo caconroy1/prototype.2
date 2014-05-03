@@ -1,4 +1,5 @@
 ActiveAdmin.register Tweet do
+  permit_params :tweet, :approval_status, :title, :author, :content_platform, :content_type, :image, :url, :author_notes, :editor_notes, :keyword_checklist
 
   
   # See permitted parameters documentation:
