@@ -1,4 +1,6 @@
 Prototype::Application.routes.draw do
+  resources :instagram_images
+
   resources :pins
 
   resources :tweets

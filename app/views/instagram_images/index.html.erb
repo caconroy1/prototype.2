@@ -1,0 +1,49 @@
+<h1>Listing instagram_images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Image</th>
+      <th>Approval status</th>
+      <th>Title</th>
+      <th>Social snippet</th>
+      <th>Author</th>
+      <th>Content platform</th>
+      <th>Content type</th>
+      <th>Associated text</th>
+      <th>Author notes</th>
+      <th>Editor notes</th>
+      <th>Keyword checklist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instagram_images.each do |instagram_image| %>
+      <tr>
+        <td><%= instagram_image.user %></td>
+        <td><%= instagram_image.image %></td>
+        <td><%= instagram_image.approval_status %></td>
+        <td><%= instagram_image.title %></td>
+        <td><%= instagram_image.social_snippet %></td>
+        <td><%= instagram_image.author %></td>
+        <td><%= instagram_image.content_platform %></td>
+        <td><%= instagram_image.content_type %></td>
+        <td><%= instagram_image.associated_text %></td>
+        <td><%= instagram_image.author_notes %></td>
+        <td><%= instagram_image.editor_notes %></td>
+        <td><%= instagram_image.keyword_checklist %></td>
+        <td><%= link_to 'Show', instagram_image %></td>
+        <td><%= link_to 'Edit', edit_instagram_image_path(instagram_image) %></td>
+        <td><%= link_to 'Destroy', instagram_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instagram image', new_instagram_image_path %>

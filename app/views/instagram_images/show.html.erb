@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @instagram_image.user %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @instagram_image.image %>
+</p>
+
+<p>
+  <strong>Approval status:</strong>
+  <%= @instagram_image.approval_status %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @instagram_image.title %>
+</p>
+
+<p>
+  <strong>Social snippet:</strong>
+  <%= @instagram_image.social_snippet %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @instagram_image.author %>
+</p>
+
+<p>
+  <strong>Content platform:</strong>
+  <%= @instagram_image.content_platform %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @instagram_image.content_type %>
+</p>
+
+<p>
+  <strong>Associated text:</strong>
+  <%= @instagram_image.associated_text %>
+</p>
+
+<p>
+  <strong>Author notes:</strong>
+  <%= @instagram_image.author_notes %>
+</p>
+
+<p>
+  <strong>Editor notes:</strong>
+  <%= @instagram_image.editor_notes %>
+</p>
+
+<p>
+  <strong>Keyword checklist:</strong>
+  <%= @instagram_image.keyword_checklist %>
+</p>
+
+<%= link_to 'Edit', edit_instagram_image_path(@instagram_image) %> |
+<%= link_to 'Back', instagram_images_path %>
