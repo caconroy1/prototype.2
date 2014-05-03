@@ -1,4 +1,5 @@
 ActiveAdmin.register Pin do
+  permit_params :approval_status, :author, :url, :title, :social_snippet, :content_platform, :content_type, :description, :author_notes, :editor_notes, :keyword_checklist, :image
 
   
   # See permitted parameters documentation:
