@@ -1,4 +1,5 @@
 ActiveAdmin.register WordpressBlogPost do
+  permit_params :blog_post, :featured_image, :approval_status, :social_snippet, :author, :content_platform, :content_type, :author_notes, :editor_notes, :keyword_checklist
 
   
   # See permitted parameters documentation:
