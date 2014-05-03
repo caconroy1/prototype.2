@@ -1,0 +1,47 @@
+<h1>Listing wordpress_blog_posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Blog post</th>
+      <th>Featured image</th>
+      <th>Approval status</th>
+      <th>Social snippet</th>
+      <th>Author</th>
+      <th>Content platform</th>
+      <th>Content type</th>
+      <th>Author notes</th>
+      <th>Editor notes</th>
+      <th>Keyword checklist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wordpress_blog_posts.each do |wordpress_blog_post| %>
+      <tr>
+        <td><%= wordpress_blog_post.user %></td>
+        <td><%= wordpress_blog_post.blog_post %></td>
+        <td><%= wordpress_blog_post.featured_image %></td>
+        <td><%= wordpress_blog_post.approval_status %></td>
+        <td><%= wordpress_blog_post.social_snippet %></td>
+        <td><%= wordpress_blog_post.author %></td>
+        <td><%= wordpress_blog_post.content_platform %></td>
+        <td><%= wordpress_blog_post.content_type %></td>
+        <td><%= wordpress_blog_post.author_notes %></td>
+        <td><%= wordpress_blog_post.editor_notes %></td>
+        <td><%= wordpress_blog_post.keyword_checklist %></td>
+        <td><%= link_to 'Show', wordpress_blog_post %></td>
+        <td><%= link_to 'Edit', edit_wordpress_blog_post_path(wordpress_blog_post) %></td>
+        <td><%= link_to 'Destroy', wordpress_blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wordpress blog post', new_wordpress_blog_post_path %>

@@ -1,0 +1,21 @@
+<%= simple_form_for(@wordpress_blog_post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :blog_post %>
+    <%= f.input :featured_image %>
+    <%= f.input :approval_status %>
+    <%= f.input :social_snippet %>
+    <%= f.input :author %>
+    <%= f.input :content_platform %>
+    <%= f.input :content_type %>
+    <%= f.input :author_notes %>
+    <%= f.input :editor_notes %>
+    <%= f.input :keyword_checklist %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

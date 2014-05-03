@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @wordpress_blog_post.user %>
+</p>
+
+<p>
+  <strong>Blog post:</strong>
+  <%= @wordpress_blog_post.blog_post %>
+</p>
+
+<p>
+  <strong>Featured image:</strong>
+  <%= @wordpress_blog_post.featured_image %>
+</p>
+
+<p>
+  <strong>Approval status:</strong>
+  <%= @wordpress_blog_post.approval_status %>
+</p>
+
+<p>
+  <strong>Social snippet:</strong>
+  <%= @wordpress_blog_post.social_snippet %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @wordpress_blog_post.author %>
+</p>
+
+<p>
+  <strong>Content platform:</strong>
+  <%= @wordpress_blog_post.content_platform %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @wordpress_blog_post.content_type %>
+</p>
+
+<p>
+  <strong>Author notes:</strong>
+  <%= @wordpress_blog_post.author_notes %>
+</p>
+
+<p>
+  <strong>Editor notes:</strong>
+  <%= @wordpress_blog_post.editor_notes %>
+</p>
+
+<p>
+  <strong>Keyword checklist:</strong>
+  <%= @wordpress_blog_post.keyword_checklist %>
+</p>
+
+<%= link_to 'Edit', edit_wordpress_blog_post_path(@wordpress_blog_post) %> |
+<%= link_to 'Back', wordpress_blog_posts_path %>
