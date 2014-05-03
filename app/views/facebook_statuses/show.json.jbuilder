@@ -1,0 +1,1 @@
+json.extract! @facebook_status, :id, :user_id, :approval_status, :title, :facebook_status, :author, :content_platform, :content_type, :author_notes, :editor_notes, :keyword_checklist, :created_at, :updated_at

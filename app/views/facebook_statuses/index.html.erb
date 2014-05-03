@@ -1,0 +1,45 @@
+<h1>Listing facebook_statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Approval status</th>
+      <th>Title</th>
+      <th>Facebook status</th>
+      <th>Author</th>
+      <th>Content platform</th>
+      <th>Content type</th>
+      <th>Author notes</th>
+      <th>Editor notes</th>
+      <th>Keyword checklist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facebook_statuses.each do |facebook_status| %>
+      <tr>
+        <td><%= facebook_status.user %></td>
+        <td><%= facebook_status.approval_status %></td>
+        <td><%= facebook_status.title %></td>
+        <td><%= facebook_status.facebook_status %></td>
+        <td><%= facebook_status.author %></td>
+        <td><%= facebook_status.content_platform %></td>
+        <td><%= facebook_status.content_type %></td>
+        <td><%= facebook_status.author_notes %></td>
+        <td><%= facebook_status.editor_notes %></td>
+        <td><%= facebook_status.keyword_checklist %></td>
+        <td><%= link_to 'Show', facebook_status %></td>
+        <td><%= link_to 'Edit', edit_facebook_status_path(facebook_status) %></td>
+        <td><%= link_to 'Destroy', facebook_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Facebook status', new_facebook_status_path %>

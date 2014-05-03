@@ -1,4 +1,6 @@
 Prototype::Application.routes.draw do
+  resources :facebook_statuses
+
   resources :wordpress_blog_posts
 
   devise_for :admin_users, ActiveAdmin::Devise.config

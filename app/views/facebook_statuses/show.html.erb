@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @facebook_status.user %>
+</p>
+
+<p>
+  <strong>Approval status:</strong>
+  <%= @facebook_status.approval_status %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @facebook_status.title %>
+</p>
+
+<p>
+  <strong>Facebook status:</strong>
+  <%= @facebook_status.facebook_status %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @facebook_status.author %>
+</p>
+
+<p>
+  <strong>Content platform:</strong>
+  <%= @facebook_status.content_platform %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @facebook_status.content_type %>
+</p>
+
+<p>
+  <strong>Author notes:</strong>
+  <%= @facebook_status.author_notes %>
+</p>
+
+<p>
+  <strong>Editor notes:</strong>
+  <%= @facebook_status.editor_notes %>
+</p>
+
+<p>
+  <strong>Keyword checklist:</strong>
+  <%= @facebook_status.keyword_checklist %>
+</p>
+
+<%= link_to 'Edit', edit_facebook_status_path(@facebook_status) %> |
+<%= link_to 'Back', facebook_statuses_path %>

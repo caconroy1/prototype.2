@@ -1,0 +1,2 @@
+module FacebookStatusesHelper
+end
