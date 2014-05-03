@@ -1,4 +1,5 @@
 ActiveAdmin.register FacebookStatus do
+  permit_params :approval_status, :title, :facebook_status, :author, :content_platform, :content_type, :author_notes, :editor_notes, :keyword_checklist
 
   
   # See permitted parameters documentation:
