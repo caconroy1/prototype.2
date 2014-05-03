@@ -1,6 +1,5 @@
-<h1>Editing instagram_image</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @instagram_image %> |
-<%= link_to 'Back', instagram_images_path %>
+<%- model_class = InstagramImage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => InstagramImage %></h1>
+</div>
+<%= render :partial => 'form' %>

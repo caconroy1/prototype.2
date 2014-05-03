@@ -1,64 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = InstagramImage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => InstagramImage %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @instagram_image.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:approval_status) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.approval_status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:social_snippet) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.social_snippet %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:author) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.author %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_platform) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.content_platform %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_type) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.content_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:associated_text) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.associated_text %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:author_notes) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.author_notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:editor_notes) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.editor_notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:keyword_checklist) %></dt>
+      <dd><pre class="prettyprint"><%= @instagram_image.keyword_checklist %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @instagram_image.image %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              instagram_images_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_instagram_image_path(@instagram_image), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              instagram_image_path(@instagram_image),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Approval status:</strong>
-  <%= @instagram_image.approval_status %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @instagram_image.title %>
-</p>
-
-<p>
-  <strong>Social snippet:</strong>
-  <%= @instagram_image.social_snippet %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @instagram_image.author %>
-</p>
-
-<p>
-  <strong>Content platform:</strong>
-  <%= @instagram_image.content_platform %>
-</p>
-
-<p>
-  <strong>Content type:</strong>
-  <%= @instagram_image.content_type %>
-</p>
-
-<p>
-  <strong>Associated text:</strong>
-  <%= @instagram_image.associated_text %>
-</p>
-
-<p>
-  <strong>Author notes:</strong>
-  <%= @instagram_image.author_notes %>
-</p>
-
-<p>
-  <strong>Editor notes:</strong>
-  <%= @instagram_image.editor_notes %>
-</p>
-
-<p>
-  <strong>Keyword checklist:</strong>
-  <%= @instagram_image.keyword_checklist %>
-</p>
-
-<%= link_to 'Edit', edit_instagram_image_path(@instagram_image) %> |
-<%= link_to 'Back', instagram_images_path %>
